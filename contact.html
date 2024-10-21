@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="images/jpg" href="./img/logo.webp">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            wht: '#ffffff',
+            blk: '#000000',
+            primary10: '#4495a2',
+            primary20: '#7eda95',
+            primary30: '#3baeaa',
+            primary40: '#f9f871',
+            primary50: '#007a5a',
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- #e9ebe1 -->
+  <header>
+    <!-- navigation bar -->
+     <nav class="z-[1000] fixed w-screen bg-primary10">
+      <div class="flex justify-between items-center px-[30px] py-2 h-20">
+        <!-- logo -->
+        <div>
+          <a href="index.html">
+            <img src="./icon/emezak_logo.png" alt="emezak educational consulting logo" width="50px">
+          </a>
+        </div>
+        <!-- links -->
+        <div class="bg-primary10 bg-opacity-95 fixed top-0 right-0 h-full w-full grid grid-row-3 pt-5 px-5 sm:w-[300px] hidden md:block md:w-[65%] md:h-16 md:flex md:items-center md:justify-between" id="menu-bar">
+            <!--close menu -->
+          <div class="close-menu flex flex-col gap-2 ml-auto pointer md:hidden" onclick="hidesidebar()">
+          </div>
+          <div class="flex flex-col items-center gap-5 md:gap-10 md:flex-row md:flex-row">
+            <a class="text-wht hover:text-primary20 capitalize" href="index.html">Home</a>
+            <a class="text-wht hover:text-primary20 capitalize" href="About.html">About</a>
+            <a class="text-wht hover:text-primary20 capitalize" href="services.html">services</a>
+            <a class="text-wht hover:text-primary20 capitalize" href="package.html">package</a>
+            <a class="text-wht hover:text-primary20 capitalize" href="contact.html">contact</a>
+          </div>
+        </div>
+        <!-- hamburger menu -->
+        <div class="hamburger-menu flex flex-col gap-2 cursor-pointer md:hidden" onclick="showsidebar()" id="showlinks">
+          <span></span>
+        </div>
+      </div>
+     </nav>
+  </header>
+
+
+
+<main class="pt-20">
+    <!-- contact section -->
+     <section class="w-4/5 bg-[#e9ebe1] mx-auto mt-[50px] px-[30px]">
+        <h1 class="text-center font-bold text-[#374151] text-2xl lg:w-[60%] lg:mx-auto pt-5">please fill out this short form and we will contact you promptly.</h1>
+        <form action="" class="mt-[20px] contform">
+            <div>
+                <label for="name" class="required mb-2 block">Name of Parent/Guardian (required)</label>
+                <div class="w-full grid lg:grid-cols-2 gap-5">
+                    <input type="text" name="FirstName" id="firstName" placeholder="FirstName" class="outline-none border-2 border-[#afb0a9] pl-3  w-full">
+                    <input type="text" name="lastName" id="lastName" placeholder="LastName" class="outline-none border-2 border-[#afb0a9] pl-3  w-full">
+                </div>
+            </div>
+            <div class="mt-3">
+                <label for="whatsApp-contact" class="required mb-2 block capitalize">whatsApp contact (required)</label>
+                <input type="text" name="whatsApp-contact" id="whatsAppContact" class="outline-none border-2 border-[#afb0a9] pl-3 w-full">
+              </div>
+              <div class="mt-3">
+                <label for="email" class="required mb-2 block capitalize">email (required)</label>
+                <input type="email" name="email" id="email" class="outline-none border-2 border-[#afb0a9] pl-3 w-full ">
+            </div>
+            <div class="mt-3">
+              <label for="country" class="required mb-2 block capitalize">country (required)</label>
+              <input type="country" name="country" id="country" class="outline-none border-2 border-[#afb0a9] pl-3 w-full ">
+          </div>
+          <div class="mt-3">
+            <label for="student-name" class="required mb-2 block capitalize">name of student (required)</label>
+            <input type="text" name="student-name" id="studentName" class="outline-none border-2 border-[#afb0a9] pl-3 w-full ">
+          </div>
+          <div class="mt-3">
+            <label for="whatsApp-contact" class="required mb-2 block capitalize">whatsApp contact (required)</label>
+            <input type="text" name="whatsApp-contact" id="whatsAppContact" class="outline-none border-2 border-[#afb0a9] pl-3 w-full ">
+          </div>
+          <div class="mt-3">
+            <label for="email" class="required mb-2 block capitalize">email (required)</label>
+            <input type="email" name="email" id="email" class="outline-none border-2 border-[#afb0a9] pl-3 w-full ">
+        </div>
+          <div class="mt-3">
+            <label for="high-school-name" class="required mb-2 block capitalize">name of high school (required)</label>
+            <input type="text" name="high-school-name" id="highSchoolName" class="outline-none border-2 border-[#afb0a9] pl-3 w-full ">
+          </div>
+          <div class="mt-3">
+            <label for="graduation-year" class="required mb-2 block capitalize">graduation year (required)</label>
+            <input type="text" name="graduation-year" id="graduationYear" class="outline-none border-2 border-[#afb0a9] pl-3 w-full ">
+          </div>
+          <p class="required my-2 block capitalize text-sm font-medium">package (required)</p>
+          <!--  -->
+          <div class="mt-3">
+            <label for="socials" class="required mb-2 block capitalize">how did you hear about us (required)</label>
+            <!-- option1 -->
+            
+            <label for="social" class=" mb-2 capitalize block"> <input type="radio" name="social" id="social" class="outline-none inline bg-primary10 border-2 border-[#afb0a9] mr-3">family/friends
+            </label>
+            <!-- option2 -->
+            <label for="social" class=" mb-2 capitalize block"><input type="radio" name="social" id="social" class="outline-none border-2 border-[#afb0a9] mr-3">
+              linkedin
+            </label>
+            <!-- option3 -->
+            
+            <label for="social" class=" mb-2 capitalize block">
+              <input type="radio" name="social" id="social" class="outline-none border-2 border-[#afb0a9] mr-3">
+               social media
+            </label>
+            <!-- option3 -->
+            
+            <label for="social" class=" mb-2 capitalize block">
+              <input type="radio" name="social" id="social" class="outline-none border-2 border-[#afb0a9] mr-3">
+               school counselor
+            </label>
+            <!-- option4 -->
+            <label for="social" class=" mb-2 capitalize block">
+              <input type="radio" name="social" id="social" class="outline-none border-2 border-[#afb0a9] mr-3">
+              presentation
+            </label>
+          </div>
+          <!-- message -->
+          <div class="mt-3">
+            <label for="message" class="mb-2 block capitalize">please share any information that will help us understand your circumstances and goals (optional):</label>
+             <textarea name="" id="" rows="5" class="w-full"></textarea>
+          </div>
+          <button type="submit" class="my-3 py-2 px-3 bg-primary10 text-wht uppercase rounded-sm">submit now</button>
+        </form>
+     </section>
+</main>
+  <footer class="border-t-2 border-primary20 mt-[50px] bg-primary10 text-wht  h-16 flex justify-center items-center">
+          <p> &copy; Emezak Educational Consulting</p>
+  </footer>
+<script src="main.js"></script>
+</body>
+</html>
+  

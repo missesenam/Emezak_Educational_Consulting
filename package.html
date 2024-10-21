@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="images/jpg" href="./img/logo.webp">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            wht: '#ffffff',
+            blk: '#000000',
+            primary10: '#4495a2',
+            primary20: '#7eda95',
+            primary30: '#3baeaa',
+            primary40: '#f9f871',
+            primary50: '#007a5a',
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- #e9ebe1 -->
+  <header>
+    <!-- navigation bar -->
+     <nav class="z-[1000] fixed w-screen bg-primary10">
+      <div class="flex justify-between items-center px-[30px] py-2 h-20">
+        <!-- logo -->
+        <div>
+          <a href="index.html">
+            <img src="./icon/emezak_logo.png" alt="emezak educational consulting logo" width="50px">
+          </a>
+        </div>
+        <!-- links -->
+        <div class="bg-primary10 bg-opacity-95 fixed top-0 right-0 h-full w-full grid grid-row-3 pt-5 px-5 sm:w-[300px] hidden md:block md:w-[65%] md:h-16 md:flex md:items-center md:justify-between" id="menu-bar">
+            <!--close menu -->
+          <div class="close-menu flex flex-col gap-2 ml-auto pointer md:hidden" onclick="hidesidebar()">
+          </div>
+          <div class="flex flex-col items-center gap-5 md:gap-10 md:flex-row md:flex-row">
+            <a class="text-wht hover:text-primary20 capitalize" href="index.html">Home</a>
+            <a class="text-wht hover:text-primary20 capitalize" href="About.html">About</a>
+            <a class="text-wht hover:text-primary20 capitalize" href="services.html">services</a>
+            <a class="text-wht hover:text-primary20 capitalize" href="package.html">package</a>
+            <a class="text-wht hover:text-primary20 capitalize" href="contact.html">contact</a>
+          </div>
+        </div>
+        <!-- hamburger menu -->
+        <div class="hamburger-menu flex flex-col gap-2 cursor-pointer md:hidden" onclick="showsidebar()" id="showlinks">
+          <span></span>
+        </div>
+      </div>
+     </nav>
+  </header>
+
+
+
+
+  <main class="pt-20">
+    <div class="md:w-[80%] lg:w-full mx-auto px-4 py-10">
+        <h1 class="text-3xl font-bold text-center mb-10">Our Packages</h1>
+
+        <div class="grid lg:grid-cols-3 gap-6 items-start">
+            <!-- Basic Package  auto-rows-min-->
+            <div class="rounded-lg shadow-lg p-6">
+                <div class=" border border-gray-300 rounded-lg shadow-lg p-6 text-center mb-4">
+                    <h1 class="text-xl font-bold text-gray-800 mb-2">Basic Package</h1>
+                    <p class="text-gray-600">Application review only</p>
+                </div>
+                <h2 class="text-xl font-semibold mb-4">basic package: 5hrs</h2>
+                <ul class="list-disc list-inside mb-4">
+                    <li>Review self Prepared application before it is submitted: <strong> 2.5 hrs</strong>
+                    </li>
+                    <li>Review Visa Application before it is Submitted: <strong>2.5hrs</strong></li>
+                    <li class="font-bold">price - $500</li>
+                </ul>
+            </div>
+
+            <!-- Standard Package -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="bg-white border border-gray-300 rounded-lg shadow-lg p-6 text-center mb-4">
+                    <h1 class="text-xl font-bold text-gray-800 mb-2">Standard Package</h1>
+                    <p class="text-gray-600">Full application support, including essay guidance, Test Prep, college selection and visa assistance.</p>
+                </div>
+                <h2 class="text-xl font-semibold mb-4">Standard Package: $6000 - 12-18 Months</h2>
+                <div>
+                    <ol class="list-decimal list-inside mb-4">
+                        <li>College Selection and Application Strategy - 2 weeks
+                            <ul class="list-disc list-inside mb-4">
+                                <li>Guidance on selecting “reach,” “match,” and “safety” schools.</li>
+                                <li>Development of a tailored application timeline and checklist to track deadlines.</li>
+                            </ul>
+                        </li>
+                        <li>Personal Statement and Essay Support - 1 month
+                            <ul class="list-disc list-inside mb-4">
+                                <li>Brainstorming sessions to craft compelling personal statements.</li>
+                                <li>Professional editing and feedback on essays.</li>
+                            </ul>
+                        </li>
+                        <li>Standardized Test Preparation - 3 months
+                            <ul class="list-disc list-inside mb-4">
+                                <li>Guidance on which tests to take (SAT, ACT, GRE, etc.).</li>
+                                <li>Access to test prep resources and strategies for improving scores.</li>
+                            </ul>
+                        </li>
+                        <li>Resume and Recommendation Letter Assistance - <strong>2 weeks</strong></li>
+                        <ul class="list-disc list-inside mb-4">
+                            <li>Support in building a strong resume that highlights achievements, extracurricular activities, and leadership roles.</li>
+                            <li>Assistance with selecting appropriate recommenders (teachers, employers, etc.).</li>
+                            <li>Guidance on how to request effective recommendation letters.</li>
+                        </ul>
+                        <li>Financial Aid and Scholarship Guidance - <strong>1 month</strong></li>
+                        <ul class="list-decimal list-inside mb-4">
+                            <li>Help with completing financial aid applications (FAFSA, CSS Profile).</li>
+                            <li>Identification of scholarships and grants based on academic and personal profile.</li>
+                            <li>Assistance with drafting scholarship application essays.</li>
+                        </ul>
+                        <li>Visa Application and Immigration Support - <strong>5 months</strong></li>
+                        <ul class="list-disc list-inside mb-4">
+                            <li>Step-by-step guidance on the F-1 student visa application process.</li>
+                            <li>SEVIS registration assistance and fee payment guidance.</li>
+                            <li>Cybersecurity</li>
+                            <li>Preparation for visa interviews with mock interview sessions and tips.</li>
+                        </ul>
+                        <li>Workshops and Webinars - <strong>1 week ( Optional)</strong></li>
+                        <ul class="list-disc list-inside mb-4">
+                            <li>Access to exclusive workshops on essay writing, financial aid, and interview skills.</li>
+                            <li>Invitations to webinars with guest speakers (e.g., alumni or admissions officers).</li>
+                        </ul>
+                        <li>Post-Admission Support- <strong>3 month</strong></li>
+                        <ul class="list-disc list-inside mb-4">
+                            <li>Guidance on accepting admission offers and communicating with universities.</li>
+                            <li>Assistance with housing and course registration (if needed).</li>
+                            <li>Overview of U.S. campus life and cultural adjustment tips</li>
+                        </ul>
+                    </ol>
+                </div>
+            </div>
+            <!-- Premium Package -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="bg-white border border-gray-300 rounded-lg shadow-lg p-6 text-center mb-4">
+                    <h1 class="text-xl font-bold text-gray-800 mb-2">Premium Package 
+                    </h1>
+                    <p class="text-gray-600">Standard Package plus Stem training (Analytics, Web developments, Coding etc.)
+                    </p>
+                </div>
+                <h2 class="text-xl font-semibold mb-4">Premium Package:$7500 12-18 Month
+                </h2>
+                <ol class="list-decimal list-inside">
+                    <li>Standard Package - <strong>12-18 months</strong></li>
+                    <li>STEM Basic Training ( for student who are planning on going to school for stem related courses) - <strong>6 weeks</strong></li>
+                    <ul class="list-disc list-inside mb-4">
+                        <li>Data Science - Data Analytics</li>
+                        <li>Coding /AI/ML</li>
+                        <li>Cybersecurity</li>
+                        <li>Web and Mobile Development</li>
+                    </ul>
+                </ol>
+            </div>
+        </div>
+        <!-- why us? -->
+        <div class="mt-10 text-center">
+            <h3 class="text-2xl font-bold">Why Choose Us?</h3>
+            <p class="mt-4 text-lg">At Emezak Educational Consulting, we are dedicated to mentor students to discover their potential, enhance their profiles, and secure scholarships and financial aid that ease the path toward higher education. </p>
+        </div>
+    </div>
+  </main>
+
+
+
+
+
+  <footer class="border-t-2 border-primary20 mt-[50px] bg-primary10 text-wht  h-16 flex justify-center items-center">
+    <p> &copy; Emezak Educational Consulting</p>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

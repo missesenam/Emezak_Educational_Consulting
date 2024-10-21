@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="images/jpg" href="./img/logo.webp">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            wht: '#ffffff',
+            blk: '#000000',
+            primary10: '#4495a2',
+            primary20: '#7eda95',
+            primary30: '#3baeaa',
+            primary40: '#f9f871',
+            primary50: '#007a5a',
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <!-- navigation bar -->
+     <nav class="z-[1000] fixed w-screen bg-primary10">
+      <div class="flex justify-between items-center px-[30px] py-2 h-20">
+        <!-- logo -->
+        <div>
+          <a href="index.html">
+            <img src="./icon/emezak_logo.png" alt="emezak educational consulting logo" width="50px">
+          </a>
+        </div>
+        <!-- links -->
+        <div class="bg-primary10 bg-opacity-95 fixed top-0 right-0 h-full w-full grid grid-row-3 pt-5 px-5 sm:w-[300px] hidden md:block md:w-[65%] md:h-16 md:flex md:items-center md:justify-between" id="menu-bar">
+            <!--close menu -->
+          <div class="close-menu flex flex-col gap-2 ml-auto pointer md:hidden" onclick="hidesidebar()">
+          </div>
+          <div class="flex flex-col items-center gap-5 md:gap-10 md:flex-row md:flex-row">
+            <a class="text-wht hover:text-primary20 capitalize" href="index.html">Home</a>
+            <a class="text-wht hover:text-primary20 capitalize" href="About.html">About</a>
+            <a class="text-wht hover:text-primary20 capitalize" href="services.html">services</a>
+            <a class="text-wht hover:text-primary20 capitalize" href="package.html">package</a>
+            <a class="text-wht hover:text-primary20 capitalize" href="contact.html">contact</a>
+          </div>
+        </div>
+        <!-- hamburger menu -->
+        <div class="hamburger-menu flex flex-col gap-2 cursor-pointer md:hidden" onclick="showsidebar()" id="showlinks">
+          <span></span>
+        </div>
+      </div>
+     </nav>
+  </header>
+
+
+
+<main class="pt-20">
+    <h1 class="text-4xl font-bold text-center py-10">Our Services</h1>
+    <div class="w-11/12 mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6 ">
+        <!-- 1 -->
+        <div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg">
+            <div class="relative h-48 m-2.5 border border-gray-300 rounded-lg shadow-lg p-6 flex flex-col justify-center items-center bg-primary30 bg-opacity-50">
+                <h1 class="text-xl font-bold text-gray-800 mb-2 text-center">Application Strategy and Planning</h1>
+            </div>
+            <div class="p-4">
+                <ul class="text-slate-600 leading-normal font-light list-disc list-inside">
+                    <li>Assess student’s academic strengths, extracurricular activities, and career interests.
+                    </li>
+                    <li>Develop a customized roadmap with timelines to manage tasks efficiently</li>
+                </ul>
+            </div>
+          </div>  
+          <!-- 2 -->
+          <div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg">
+            <div class="relative h-48 m-2.5 border border-gray-300 rounded-lg shadow-lg p-6 flex flex-col justify-center items-center bg-primary30 bg-opacity-50">
+                <h1 class="text-xl font-bold text-gray-800 mb-2">College/University Selection
+                </h1>
+            </div>
+            <div class="p-4">
+                <ul class="text-slate-600 leading-normal font-light list-disc list-inside">
+                    <li>Recommend schools that match the student’s profile, aspirations, and budget
+                    </li>
+                    <li>Provide insights on safety, match, and reach schools.
+                    </li>
+                </ul>
+            </div>
+          </div> 
+          <!-- 3 -->
+          <div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg">
+            <div class="relative h-48 m-2.5 border border-gray-300 rounded-lg shadow-lg p-6 flex flex-col justify-center items-center bg-primary30 bg-opacity-50">
+                <h1 class="text-xl font-bold text-gray-800 mb-2 text-center">Essay and Personal Statement Review</h1>
+            </div>
+            <div class="p-4">
+                <ul class="text-slate-600 leading-normal font-light list-disc list-inside">
+                    <li>Brainstorm essay topics that reflect the student’s personality and achievements.
+                    </li>
+                    <li>Offer detailed feedback and revisions to strengthen writing.
+                    </li>
+                </ul>
+            </div>
+          </div> 
+          <!-- 4 -->
+          <div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg">
+            <div class="relative h-48 m-2.5 border border-gray-300 rounded-lg shadow-lg p-6 flex flex-col justify-center items-center bg-primary30 bg-opacity-50">
+                <h1 class="text-xl font-bold text-gray-800 mb-2 text-center">Scholarships and Financial Aid Support
+                </h1>
+            </div>
+            <div class="p-4">
+                <ul class="text-slate-600 leading-normal font-light list-disc list-inside">
+                    <li>Identify relevant scholarships and funding opportunities.
+                    </li>
+                    <li>Guide students through the financial aid process.
+                    </li>
+                </ul>
+            </div>
+          </div> 
+          <!-- 5 -->
+          <div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg">
+            <div class="relative h-48 m-2.5 border border-gray-300 rounded-lg shadow-lg p-6 flex flex-col justify-center items-center bg-primary30 bg-opacity-50">
+                <h1 class="text-xl font-bold text-gray-800 mb-2">Interview Preparation</h1>
+            </div>
+            <div class="p-4">
+                <ul class="text-slate-600 leading-normal font-light list-disc list-inside">
+                    <li>Offer mock interviews and tips to build student confidence.
+                    </li>
+                </ul>
+            </div>
+          </div> 
+          <!-- 6 -->
+          <div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg">
+            <div class="relative h-48 m-2.5 border border-gray-300 rounded-lg shadow-lg p-6 flex flex-col justify-center items-center bg-primary30 bg-opacity-50">
+                <h1 class="text-xl font-bold text-gray-800 mb-2"> Basic practical STEM Training
+                </h1>
+            </div>
+            <div class="p-4">
+                <ul class="text-slate-600 leading-normal font-light list-disc list-inside">
+                    
+                </ul>
+            </div>
+          </div> 
+    </div>
+</main>
+
+
+
+
+
+
+
+
+  <footer class="border-t-2 border-primary20 mt-[50px] bg-primary10 text-wht  h-16 flex justify-center items-center">
+          <p> &copy; Emezak Educational Consulting</p>
+  </footer>
+<script src="main.js"></script>
+</body>
+</html>
+  
