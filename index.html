@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" type="images/jpg" href="./img/logo.webp">
+  <link rel="shortcut icon" type="images/jpg" href="./icon/emezak_logo.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -22,12 +22,15 @@
       }
     }
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <!-- navigation bar -->
-     <nav class="z-[1000] fixed w-screen bg-primary10">
+    <nav class="z-[1000] fixed w-screen bg-primary10">
       <div class="flex justify-between items-center px-[30px] py-2 h-20">
         <!-- logo -->
         <div>
@@ -37,15 +40,15 @@
         </div>
         <!-- links -->
         <div class="bg-primary10 bg-opacity-95 fixed top-0 right-0 h-full w-full grid grid-row-3 pt-5 px-5 sm:w-[300px] hidden md:block md:w-[65%] md:h-16 md:flex md:items-center md:justify-between" id="menu-bar">
-            <!--close menu -->
+          <!--close menu -->
           <div class="close-menu flex flex-col gap-2 ml-auto pointer md:hidden" onclick="hidesidebar()">
           </div>
           <div class="flex flex-col items-center gap-5 md:gap-10 md:flex-row md:flex-row">
             <a class="text-wht hover:text-primary20 capitalize" href="index.html">Home</a>
             <a class="text-wht hover:text-primary20 capitalize" href="About.html">About</a>
-            <a class="text-wht hover:text-primary20 capitalize" href="services.html">services</a>
-            <a class="text-wht hover:text-primary20 capitalize" href="package.html">package</a>
-            <a class="text-wht hover:text-primary20 capitalize" href="contact.html">contact</a>
+            <a class="text-wht hover:text-primary20 capitalize" href="services.html">Services</a>
+            <a class="text-wht hover:text-primary20 capitalize" href="package.html">Package</a>
+            <a class="text-wht hover:text-primary20 capitalize" href="contact.html">Contact</a>
           </div>
         </div>
         <!-- hamburger menu -->
@@ -53,34 +56,90 @@
           <span></span>
         </div>
       </div>
-     </nav>
-     <!-- hero section -->
-     <div class="bg-[url('img/Picture1copy.png')] pt-16 h-screen bg-cover bg-center bg-black bg-opacity-70 bg-blend-darken relative overflow-hidden flex justify-center items-center">
-        <!--   bg-opacity-70 lg:pl-[20px] -->
-       <div class="text-wht absolute text-center lg:text-left px-[15%] lg:px-[0%] lg:left-4">
+    </nav>
+    <!-- hero section -->
+    <div class="bg-[url('img/Picture1copy1.jpg')] bg-top h-screen bg-cover bg-center bg-black bg-opacity-70 bg-blend-darken relative overflow-hidden flex justify-center items-center">
+      <div class="text-wht absolute text-center lg:text-left px-[15%] lg:px-[0%] lg:left-4">
         <h1 class="text-[5vw] md:text-3xl lg:text-3xl font-bold mb-10 lg:w-[700px]">Turning Studying Abroad Hope into Reality Or Empowering Dreams, Unlocking Global Education</h1>
-        <a href="enteremail.html" class="bg-primary10 text-wht py-2 lg:py-5 px-4 rounded hover:bg-primary30 uppercase font-bold text-xl">book a free online consultation</a>
+        <button class="flex items-center rounded-md text-wht bg-gradient-to-tr from-primary10 to-primary20 hover:bg-black uppercase space-x-2 py-6 px-5 font-bold text-lg md:text-xl" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></svg>
+          <a href="enteremail.html">book a free online consultation</a>
+        </button>
       </div>
-     </div>
+    </div>
   </header>
+  
+  <main class="py-16 px-4 bg-gray-100">
+    <div class="max-w-6xl mx-auto flex flex-col items-center justify-center text-center">
+      <h2 class="text-3xl font-bold text-primary50 mb-4">Applying to College or Graduate School Abroad?</h2>
+      <p class="text-lg text-gray-700 mb-10">
+        Emezak Educational Consulting is devoted to empowering students from around the continent in the undergraduate and graduate school admissions process abroad.
+      </p>
+      <div class="flex items-center space-x-5 mt-6">
+        <img src="./img/emezak-pic.png" alt="Emezak Educational Consulting" class="w-28 h-auto rounded-lg shadow-lg ml-4" />
+        <span class="text-primary20 font-semibold text-2xl">Your Path to Global Education Awaits!</span>
+      </div>
+    </div>
+    <!-- services section -->
+    <section class="py-16 bg-white">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-primary50 mb-8">Our Services</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-gray-100 p-6 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:bg-primary20 hover:text-white">
+            <h3 class="text-xl font-semibold text-primary50 mb-4">Application Strategy and Planning</h3>
+            <p class="text-gray-700">We provide expert guidance to help you develop a personalized application strategy that maximizes your chances of acceptance.</p>
+          </div>
+          <div class="bg-gray-100 p-6 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:bg-primary20 hover:text-white">
+            <h3 class="text-xl font-semibold text-primary50 mb-4">College/University Selection</h3>
+            <p class="text-gray-700">Receive tailored advice on selecting the right colleges and universities that fit your academic goals and personal aspirations.</p>
+          </div>
+          <div class="bg-gray-100 p-6 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:bg-primary20 hover:text-white">
+            <h3 class="text-xl font-semibold text-primary50 mb-4">Essay and Personal Statement Review</h3>
+            <p class="text-gray-700">Get constructive feedback on your essays and personal statements to ensure they reflect your unique voice and experiences.</p>
+          </div>
+        </div>
+        <a href="services.html" class="mt-8 inline-block bg-primary20 text-white font-bold py-3 px-6 rounded-md hover:bg-primary30 transition">View More Services</a>
+      </div>
+    </section>
+    
+    <!-- meet our team -->
+    <section class="py-16 bg-gray-100">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-primary50 mb-8">Meet The Team</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-lg">
+            <img src="./img/driver5.jpg" alt="Nana Sarpanyin" class="w-full h-[300px] object-cover object-top rounded-lg mb-4"> <!-- Increased height -->
+            <h3 class="text-xl font-semibold text-primary50">Nana Sarpanyin</h3>
+            <p class="text-gray-700">Founder / Head of Consulting</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-lg">
+            <img src="./img/driver3.jpg" alt="Oliver Aziator" class="w-full h-[300px] object-cover object-top rounded-lg mb-4"> <!-- Increased height -->
+            <h3 class="text-xl font-semibold text-primary50">Oliver Aziator</h3>
+            <p class="text-gray-700">Founder / Head of Operations</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- book -->
+     <!-- Call to Action Section -->
+    <section class="py-16 bg-primary30 text-white text-center">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-4">Ready to Begin Your Journey?</h2>
+        <p class="mb-6">Book a consultation with us today and take the first step toward your global education.</p>
+        <a href="booking.html" class="bg-primary20 hover:bg-primary10 text-white py-3 px-6 rounded-lg text-lg font-bold transition duration-300">
+          Book Your Consultation
+        </a>
+      </div>
+    </section>
 
+    
+  </main>
+  <!--  -->
 
-
-<main>
-    <img src="./img/emezak-pic.png" alt="">
-</main>
-
-
-
-
-
-
-
-
-  <footer class="border-t-2 border-primary20 mt-[50px] bg-primary10 text-wht  h-16 flex justify-center items-center">
-          <p> &copy; Emezak Educational Consulting</p>
+  <footer class="border-t-2 border-primary20 mt-[50px] bg-primary10 text-wht h-16 flex justify-center items-center">
+    <p>&copy; Emezak Educational Consulting</p>
   </footer>
-<script src="main.js"></script>
+  
+  <script src="main.js"></script>
 </body>
 </html>
-  

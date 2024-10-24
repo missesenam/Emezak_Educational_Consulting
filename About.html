@@ -1,0 +1,128 @@
+<!doctype html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="images/jpg" href="./icon/emezak_logo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            wht: '#ffffff',
+            blk: '#000000',
+            primary10: '#4495a2',
+            primary20: '#7eda95',
+            primary30: '#3baeaa',
+            primary40: '#f9f871',
+            primary50: '#007a5a',
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-wht text-blk">
+  <header>
+    <!-- navigation bar -->
+    <nav class="z-[1000] fixed w-screen bg-primary10">
+      <div class="flex justify-between items-center px-[30px] py-2 h-20">
+        <!-- logo -->
+        <div>
+          <a href="index.html">
+            <img src="./icon/emezak_logo.png" alt="emezak educational consulting logo" width="50px">
+          </a>
+        </div>
+        <!-- links -->
+        <div class="bg-primary10 bg-opacity-95 fixed top-0 right-0 h-full w-full grid grid-row-3 pt-5 px-5 sm:w-[300px] hidden md:block md:w-[65%] md:h-16 md:flex md:items-center md:justify-between" id="menu-bar">
+          <!--close menu -->
+          <div class="close-menu flex flex-col gap-2 ml-auto pointer md:hidden" onclick="hidesidebar()">
+          </div>
+          <div class="flex flex-col items-center gap-5 md:gap-10 md:flex-row md:flex-row">
+            <a class="text-wht hover:text-primary20 capitalize" href="index.html">Home</a>
+            <a class="text-wht hover:text-primary20 capitalize" href="About.html">About</a>
+            <a class="text-wht hover:text-primary20 capitalize" href="services.html">Services</a>
+            <a class="text-wht hover:text-primary20 capitalize" href="package.html">Package</a>
+            <a class="text-wht hover:text-primary20 capitalize" href="contact.html">Contact</a>
+          </div>
+        </div>
+        <!-- hamburger menu -->
+        <div class="hamburger-menu flex flex-col gap-2 cursor-pointer md:hidden" onclick="showsidebar()" id="showlinks">
+          <span></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- About Us Section -->
+  <main class="pt-24">
+    <section class="py-16 bg-opacity-95 text-wht">
+      <div class="container mx-auto px-4">
+        <!-- Title -->
+        <div class="text-center">
+          <h1 class="text-4xl font-bold text-primary40 mb-4">About Us</h1>
+          <p class="text-lg  text-blk max-w-2xl mx-auto">
+            Empowering students and institutions to achieve their educational and career goals through personalized consulting services.
+          </p>
+        </div>
+
+        <!-- Content -->
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Who We Are -->
+          <div class="bg-primary10 bg-opacity-30 p-8 rounded-lg shadow">
+            <h2 class="text-2xl font-semibold text-primary10 mb-4">Who is Emezak Educational Consulting?</h2>
+            <p class="text-blk leading-relaxed">
+              At Emezak Educational Consulting, we are passionate about transforming the dreams of Ghanaian students into reality by guiding them through every step of the international college application journey. We specialize in helping students gain admission to top universities across the globe, offering personalized consulting services tailored to their individual strengths, aspirations, and financial circumstances.
+            </p>
+            <p class="text-blk leading-relaxed mt-4">
+              Our approach goes beyond just applications—we mentor students to discover their potential, enhance their profiles, and secure scholarships and financial aid that ease the path toward higher education. Whether it’s navigating platforms like the Common App or UCAS, writing compelling personal statements, or preparing for interviews, we provide the tools and confidence needed to stand out in today’s competitive admissions landscape.
+            </p>
+          </div>
+
+          <!-- What Makes Us Different -->
+          <div class="bg-primary10 bg-opacity-30 p-8 rounded-lg shadow">
+            <h2 class="text-2xl font-semibold text-primary10 mb-4">What Makes Us Different?</h2>
+            <ul class="list-disc list-inside text-blk space-y-2">
+              <li>Dedicated to African students</li>
+              <li>Our core value is creating opportunity for growth</li>
+              <li>We provide basic practical STEM training to students</li>
+              <li>We provide guidance as needed even after our students start their college careers</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Mission and Vision -->
+        <div class="mt-12 bg-primary20 bg-opacity-30 p-8 rounded-lg shadow">
+          <h2 class="text-2xl font-semibold text-primary10 mb-4">Our Mission</h2>
+          <p class="text-blk leading-relaxed">
+            To empower Ghanaian students to unlock global educational opportunities and realize their full potential through personalized consulting, mentorship, and access to scholarships.
+          </p>
+
+          <h2 class="text-2xl font-semibold text-primary10 mb-4 mt-8">Our Vision</h2>
+          <p class="text-blk leading-relaxed">
+            To become Ghana’s most trusted partner in international college admissions, fostering a new generation of global thinkers and change-makers.
+          </p>
+        </div>
+
+        <!-- Meet The Team -->
+        <div class="mt-12 bg-primary10 bg-opacity-30 p-8 rounded-lg shadow">
+          <h2 class="text-2xl font-semibold text-primary10 mb-4">Meet The Team</h2>
+          <ul class="text-blk leading-relaxed space-y-4">
+            <li><strong>Nana Sarpanyin</strong> – Founder / Head of Consulting</li>
+            <li><strong>Oliver Aziator</strong> – Founder / Head of Operations</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t-2 border-primary20 mt-[50px] bg-primary10 text-wht h-16 flex justify-center items-center">
+    <p>&copy; Emezak Educational Consulting</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
