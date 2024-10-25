@@ -27,35 +27,9 @@
 <body class="bg-wht text-blk">
   <header>
     <!-- navigation bar -->
-    <nav class="z-[1000] fixed w-screen bg-primary10">
-      <div class="flex justify-between items-center px-[30px] py-2 h-20">
-        <!-- logo -->
-        <div>
-          <a href="index.html">
-            <img src="./icon/emezak_logo.png" alt="emezak educational consulting logo" width="50px">
-          </a>
-        </div>
-        <!-- links -->
-        <div class="bg-primary10 bg-opacity-95 fixed top-0 right-0 h-full w-full grid grid-row-3 pt-5 px-5 sm:w-[300px] hidden md:block md:w-[65%] md:h-16 md:flex md:items-center md:justify-between" id="menu-bar">
-          <!--close menu -->
-          <div class="close-menu flex flex-col gap-2 ml-auto pointer md:hidden" onclick="hidesidebar()">
-          </div>
-          <div class="flex flex-col items-center gap-5 md:gap-10 md:flex-row md:flex-row">
-            <a class="text-wht hover:text-primary20 capitalize" href="index.html">Home</a>
-            <a class="text-wht hover:text-primary20 capitalize" href="About.html">About</a>
-            <a class="text-wht hover:text-primary20 capitalize" href="services.html">Services</a>
-            <a class="text-wht hover:text-primary20 capitalize" href="package.html">Package</a>
-            <a class="text-wht hover:text-primary20 capitalize" href="contact.html">Contact</a>
-          </div>
-        </div>
-        <!-- hamburger menu -->
-        <div class="hamburger-menu flex flex-col gap-2 cursor-pointer md:hidden" onclick="showsidebar()" id="showlinks">
-          <span></span>
-        </div>
-      </div>
+    <nav class="z-[1000] fixed w-screen bg-primary10" id="navbar">
     </nav>
   </header>
-
   <!-- About Us Section -->
   <main class="pt-24">
     <section class="py-16 bg-opacity-95 text-wht">
@@ -119,8 +93,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="border-t-2 border-primary20 mt-[50px] bg-primary10 text-wht h-16 flex justify-center items-center">
-    <p>&copy; Emezak Educational Consulting</p>
+  <footer class="border-t-2 border-primary20 mt-[50px] bg-primary10 text-wht h-16 flex justify-center items-center" id="footer">
   </footer>
 
   <script src="main.js"></script>
