@@ -1,5 +1,6 @@
 // menu
 const navBar = document.getElementById('navbar')
+
  let navigation = `
  <nav>
  <div class="flex justify-between items-center px-[30px] py-2 h-20">
@@ -24,29 +25,34 @@ const navBar = document.getElementById('navbar')
         </div>
         <!-- hamburger menu -->
         <div class="hamburger-menu flex flex-col gap-2 cursor-pointer md:hidden" onclick="showsidebar()" id="showlinks">
-          <span></span>
+          <span class="sp"></span>
         </div>
       </div>    
       </nav>
       `
 navBar.innerHTML = navigation
 // navbar color on scrool
+const hamburgerMenu = document.querySelector('.hamburger-menu');
 
 window.addEventListener("scroll", function() {
   if (window.scrollY > 50) { 
     navBar.classList.add('bg-primary10'); 
-    navBar.classList.remove('md:bg-transparent'); 
+    navBar.classList.remove('md:bg-transparent');
+
+    hamburgerMenu.style.setProperty('--hamburger-color', 'white')
   } else {
     navBar.classList.remove('bg-primary10'); 
-    navBar.classList.add('md:bg-transparent');
+    navBar.classList.add('md:bg-transparent');  
+
+    hamburgerMenu.style.setProperty('--hamburger-color', 'rgb(34, 33, 33)');
   }
 });
-
 
 // hide and show menu
 
 const menuBar = document.getElementById('menu-bar')
 const hamburgerbar = document.getElementById('showlinks')
+
 function showsidebar(){
     menuBar.classList.remove('hidden')
     hamburgerbar.classList.add('hidden')

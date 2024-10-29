@@ -9,7 +9,7 @@
             content: '';
             width: 45px;
             height: 6px;
-            background: white;
+            background: var(--hamburger-color, rgb(34, 33, 33));
             border-radius: 100px;
         }
         .close-menu{
