@@ -1,6 +1,7 @@
 // menu
 const navBar = document.getElementById('navbar')
  let navigation = `
+ <nav>
  <div class="flex justify-between items-center px-[30px] py-2 h-20">
         <!-- logo -->
         <div>
@@ -9,25 +10,39 @@ const navBar = document.getElementById('navbar')
           </a>
         </div>
         <!-- links -->
-        <div class="bg-primary10 bg-opacity-95 fixed top-0 right-0 h-full w-full grid grid-row-3 pt-5 px-5 sm:w-[300px] hidden md:block md:w-[65%] md:h-16 md:flex md:items-center md:justify-between" id="menu-bar">
+        <div class="bg-primary10 bg-opacity-95 fixed top-0 right-0 h-full w-full grid grid-row-3 pt-5 px-5 sm:w-[300px] hidden md:block md:bg-transparent md:w-[65%] md:h-16 md:flex md:items-center md:justify-between" id="menu-bar">
             <!--close menu -->
-          <div class="close-menu flex flex-col gap-2 ml-auto pointer md:hidden" onclick="hidesidebar()">
+          <div class="close-menu flex flex-col gap-2 ml-auto pointer md:hidden cursor-pointer" onclick="hidesidebar()">
           </div>
           <div class="flex flex-col items-center gap-5 md:gap-10 md:flex-row md:flex-row">
-            <a class="text-wht hover:text-primary20 capitalize" href="index.html">Home</a>
-            <a class="text-wht hover:text-primary20 capitalize" href="About.html">About</a>
-            <a class="text-wht hover:text-primary20 capitalize" href="services.html">services</a>
-            <a class="text-wht hover:text-primary20 capitalize" href="package.html">package</a>
-            <a class="text-wht hover:text-primary20 capitalize" href="contact.html">contact</a>
+            <a class="text-primary20 font-bold hover:text-primary30 capitalize" href="index.html">Home</a>
+            <a class="text-primary20 font-bold hover:text-primary30 capitalize" href="About.html">About</a>
+            <a class="text-primary20 font-bold hover:text-primary30 capitalize" href="services.html">services</a>
+            <a class="text-primary20 font-bold hover:text-primary30 capitalize" href="package.html">package</a>
+            <a class="text-primary20 font-bold hover:text-primary30 capitalize" href="contact.html">contact</a>
           </div>
         </div>
         <!-- hamburger menu -->
         <div class="hamburger-menu flex flex-col gap-2 cursor-pointer md:hidden" onclick="showsidebar()" id="showlinks">
           <span></span>
         </div>
-      </div>
+      </div>    
+      </nav>
       `
 navBar.innerHTML = navigation
+// navbar color on scrool
+
+window.addEventListener("scroll", function() {
+  if (window.scrollY > 50) { 
+    navBar.classList.add('bg-primary10'); 
+    navBar.classList.remove('md:bg-transparent'); 
+  } else {
+    navBar.classList.remove('bg-primary10'); 
+    navBar.classList.add('md:bg-transparent');
+  }
+});
+
+
 // hide and show menu
 
 const menuBar = document.getElementById('menu-bar')
@@ -40,7 +55,6 @@ function hidesidebar(){
     menuBar.classList.add('hidden')
     hamburgerbar.classList.remove('hidden')
 } 
-
 // footer
 
 const pageFooter = document.getElementById('footer')
