@@ -322,7 +322,62 @@
     servicesBox.innerHTML += servicecard;
   });
 });
-
+// about team
+document.addEventListener("DOMContentLoaded", function() {
+  const teamBox = document.getElementById('team-box')
+  const theTeam = [
+    {
+      name: "Dr. Oliver Aziator (FPMP)",
+      description: "Founder / Head of Operations",
+      moredescription: "Dr. Oliver Komi Mawunyo Aziator Founder & Head of Operations, Emezak Educational Consulting Trusted Education Abroad Expert | Visionary Leader | Student Success Strategist",
+      img: "./img/drOliver.jpg",
+      id: "1"
+    },
+    {
+      name: "Nana Sarpanyin",
+      description: "Founder / Head of Consulting",
+      moredescription: "Dr. Oliver Komi Mawunyo Aziator Founder & Head of Operations, Emezak Educational Consulting Trusted Education Abroad Expert | Visionary Leader | Student Success Strategist",
+      img: "./img/drOliver.jpg",
+      id: "2"
+    }
+  ]
+  theTeam.forEach(person =>{
+    let personBox = `<div class="transition-transform duration-500 ease-out transform hover:scale-105">
+                  <div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg">
+                    <!-- image -->
+                    <div class="relative h-96 m-2.5 overflow-hidden text-white rounded-md object-bottom">
+                      <img src="${person.img}" alt="card-image" class="w-full h-full object-cover"/>
+                    </div>
+                    <!-- text -->
+                    <div class="p-4">
+                      <h6 class="mb-2 text-slate-800 font-semibold">
+                        <h3><strong>${person.name}</strong></h3>
+                        <p>${person.description}</p>
+                      </h6>
+                      <p class="text-slate-600 leading-normal font-light">${person.moredescription}</p>
+                    </div>
+                    <!-- link -->
+                    <div class="m-4">
+                      <a href="about.html" class="text-slate-800 font-semibold text-sm hover:underline flex items-center p-3">
+                        Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div> 
+            </div>`
+            teamBox.innerHTML += personBox
+  })
+});
+{/* <div>
+  <a href="#" class="text-slate-800 font-semibold text-sm hover:underline flex items-center">
+                        Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                      </a>
+                    </div> */}
 
 
 
