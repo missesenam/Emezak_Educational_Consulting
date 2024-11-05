@@ -3,11 +3,11 @@
 
   let navigation = `
   <nav>
-    <div class="flex justify-between items-center px-[30px] py-2 h-20">
+    <div class="flex justify-between items-center px-[30px] py-2 h-20 shadow-xl">
       <!-- logo -->
       <div>
         <a href="index.html">
-          <img src="./icon/emezak_logo.png" alt="emezak educational consulting logo" width="50px">
+          <img src="./icon/emezak_logo1.png" alt="emezak educational consulting logo" width="50px" id="navicon">
         </a>
       </div>
       <!-- links -->
@@ -16,11 +16,11 @@
         <div class="close-menu flex flex-col gap-2 ml-auto pointer md:hidden cursor-pointer" onclick="hidesidebar()">
         </div>
         <div class="flex flex-col items-center gap-5 md:gap-10 md:flex-row md:flex-row">
-          <a class="text-primary20 font-bold hover:text-primary30 capitalize" href="index.html">Home</a>
-          <a class="text-primary20 font-bold hover:text-primary30 capitalize" href="About.html">About</a>
-          <a class="text-primary20 font-bold hover:text-primary30 capitalize" href="services.html">services</a>
-          <a class="text-primary20 font-bold hover:text-primary30 capitalize" href="package.html">package</a>
-          <a class="text-primary20 font-bold hover:text-primary30 capitalize" href="contact.html">contact</a>
+          <a class="text-primary30 font-bold hover:text-primary20 capitalize cool" href="index.html">Home</a>
+          <a class="text-primary30 font-bold hover:text-primary20 capitalize cool" href="About.html">About</a>
+          <a class="text-primary30 font-bold hover:text-primary20 capitalize cool" href="services.html">services</a>
+          <a class="text-primary30 font-bold hover:text-primary20 capitalize cool" href="package.html">package</a>
+          <a class="text-primary30 font-bold hover:text-primary20 capitalize cool" href="contact.html">contact</a>
         </div>
       </div>
       <!-- hamburger menu -->
@@ -33,16 +33,31 @@
   navBar.innerHTML = navigation;
 
   // navbar color on scroll
+
+  const linkColors = document.querySelectorAll('.cool')
   const hamburgerMenu = document.querySelector('.hamburger-menu');
+  const navIcon = document.querySelector('#navicon')
   window.addEventListener("scroll", function() {
     if (window.scrollY > 50) { 
       navBar.classList.add('bg-primary10'); 
       navBar.classList.remove('md:bg-transparent');
       hamburgerMenu.style.setProperty('--hamburger-color', 'white');
+      Array.from(linkColors).forEach(link =>{
+        link.classList.add('text-wht')
+        link.classList.remove('text-primary30')
+      })
+      // nav image
+      navIcon.src='./icon/emezak_logo.png'
     } else {
       navBar.classList.remove('bg-primary10'); 
       navBar.classList.add('md:bg-transparent');  
       hamburgerMenu.style.setProperty('--hamburger-color', 'rgb(34, 33, 33)');
+      Array.from(linkColors).forEach(link =>{
+      link.classList.add('text-primary30')
+      link.classList.remove('text-wht')
+      })
+      // nav image
+      navIcon.src='./icon/emezak_logo1.png'
     }
   });
 
@@ -370,19 +385,143 @@ document.addEventListener("DOMContentLoaded", function() {
             teamBox.innerHTML += personBox
   })
 });
-{/* <div>
-  <a href="#" class="text-slate-800 font-semibold text-sm hover:underline flex items-center">
-                        Learn More
-                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                      </a>
-                    </div> */}
+
+document.addEventListener("DOMContentLoaded", function() {
+
+
+                    const theTeamMember = [
+                      {
+                        name: "Dr. Oliver Komi Mawunyo Aziator (FPMP)",
+                      title: "Founder & Head of Operations",
+                      organization: "Emezak Educational Consulting",
+                      expertise: [
+                          "Trusted Education Abroad Expert",
+                          "Visionary Leader",
+                          "Student Success Strategist"
+                      ],
+                      about: "As a seasoned education abroad consultant, Dr. Aziator combines technological expertise with leadership acumen to empower students globally. His passion for innovation, youth empowerment, and social impact fuels Emezak Educational Consulting's mission.",
+                      professionalHighlights: [
+                          "Founder & Head of Operations, Emezak Educational Consulting",
+                          "Fellow, Project Management Professional",
+                          "Professional Doctorate in Project Management",
+                          "Doctor of Theology (DTh)",
+                          "13+ years of experience in entrepreneurship and leadership",
+                          "Proven track record of skills training and driving global student success"
+                      ],
+                      contact: {
+                          email: "Aziatoro@emezak.com",
+                          callToAction1: "Unlock Your Global Education Potential",
+                          callToAction2: "Connect with Dr. Aziator for personalized guidance and support:"
+                      }
+                      },
+                    ];
+                  
+                  
+const teamMembers = document.getElementById('team-members');
+
+theTeamMember.forEach(teamMember =>{
+const teamMemberHTML = `
+    <div class="max-w-3xl mx-auto bg-white p-6 shadow-lg rounded-lg my-8">
+        <h1 class="text-primary10 font-bold text-4xl text-center mb-6">${teamMember.name}</h1>
+        <div class="flex flex-col md:flex-row items-center bg-white shadow-sm border border-slate-200 rounded-lg overflow-hidden">
+            <div class="relative p-4 md:w-1/3 w-full">
+                <img
+                    src="./img/drOliver.jpg"
+                    alt="${teamMember.name}"
+                    class="h-full w-full rounded-md object-cover transition-transform duration-500 ease-in-out transform hover:scale-105"
+                />
+            </div>
+            <div class="p-6 text-center md:text-left md:w-3/5">
+                <h2 class="text-slate-800 text-2xl font-semibold mb-2">${teamMember.title}, ${teamMember.organization}</h2>
+                <p class="text-slate-600 leading-relaxed font-light mb-4">
+                    ${teamMember.expertise.join(' | ')}
+                </p>
+            </div>
+        </div>
+        <div class="mt-6">
+            <h3 class="text-2xl font-semibold text-primary10 mb-2">About Dr. Aziator</h3>
+            <p class="text-slate-600 leading-relaxed">
+                ${teamMember.about}
+            </p>
+        </div>
+        <div class="mt-6">
+            <h3 class="text-2xl font-semibold text-primary10 mb-2">Professional Highlights</h3>
+            <ul class="list-disc list-inside text-slate-600 leading-relaxed space-y-2">
+                ${teamMember.professionalHighlights.map(item => `<li>${item}</li>`).join('')}
+            </ul>
+        </div>
+        <div class="mt-6">
+            <h3 class="text-2xl font-semibold text-primary10 mb-2">${teamMember.contact.callToAction1}</h3>
+            <p class="text-slate-600 leading-relaxed mb-4">
+            ${teamMember.contact.callToAction2}
+            </p>
+            <p class="text-primary10 font-bold"><a href="mailto:${teamMember.contact.email}">${teamMember.contact.email}</a></p>
+        </div>
+    </div>
+`;
+teamMembers.innerHTML = teamMemberHTML;
+})
+});
+
+// document.addEventListener("DOMContentLoaded", function() {
+  let currentStep = 1;
+
+  function nextStep() {
+    if (currentStep < 3) {
+      document.getElementById(`step${currentStep}`).classList.add('hidden');
+      currentStep++;
+      document.getElementById(`step${currentStep}`).classList.remove('hidden');
+      updateProgressIcons();
+    }
+  }
+
+  function prevStep() {
+    if (currentStep > 1) {
+      document.getElementById(`step${currentStep}`).classList.add('hidden');
+      currentStep--;
+      document.getElementById(`step${currentStep}`).classList.remove('hidden');
+      updateProgressIcons();
+    }
+  }
+
+  function updateProgressIcons() {
+    for (let i = 1; i <= 3; i++) {
+      const icon = document.getElementById(`step${i}-icon`);
+      icon.classList.remove('text-blue-500');
+      icon.classList.add(i <= currentStep ? 'text-blue-500' : 'text-gray-400');
+    }
+  }
+
+  // Initialize icon colors on page load
+  updateProgressIcons();
 
 
 
 
+// let currentStep = 1;
+
+    // function showStep(step) {
+    //     document.querySelectorAll('.step').forEach((stepDiv, index) => {
+    //         stepDiv.classList.toggle('hidden', index + 1 !== step);
+    //     });
+    // }
+
+    // function nextStep() {
+    //     if (currentStep < 3) {
+    //         currentStep++;
+    //         showStep(currentStep);
+    //     }
+    // }
+
+    // function prevStep() {
+    //     if (currentStep > 1) {
+    //         currentStep--;
+    //         showStep(currentStep);
+    //     }
+    // }
+
+    // Initialize by showing the first step
+    // showStep(currentStep);
 
 
-
-
+  // });
