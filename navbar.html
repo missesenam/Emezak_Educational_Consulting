@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class="flex justify-between items-center px-[30px] py-2 h-20 shadow-xl">
+          <!-- logo -->
+          <div>
+            <a href="index.html">
+              <img src="./icon/emezak_logo1.png" alt="emezak educational consulting logo" width="50px" id="navicon">
+            </a>
+          </div>
+          <!-- links -->
+          <div class="bg-primary10 bg-opacity-95 fixed top-0 right-0 h-full w-full grid grid-row-3 pt-5 px-5 sm:w-[300px] hidden md:block md:bg-transparent md:w-[65%] md:h-16 md:flex md:items-center md:justify-between" id="menu-bar">
+            <!--close menu -->
+            <div class="close-menu flex flex-col gap-2 ml-auto pointer md:hidden cursor-pointer" onclick="hidesidebar()">
+            </div>
+            <div class="flex flex-col items-center gap-5 md:gap-10 md:flex-row md:flex-row">
+              <a class="text-wht md:text-primary30 font-bold hover:text-primary20 capitalize cool" href="index.html">Home</a>
+              <a class="text-wht md:text-primary30 font-bold hover:text-primary20 capitalize cool" href="About.html">About</a>
+              <a class="text-wht md:text-primary30 font-bold hover:text-primary20 capitalize cool" href="services.html">services</a>
+              <a class="text-wht md:text-primary30 font-bold hover:text-primary20 capitalize cool" href="package.html">package</a>
+              <a class="text-wht md:text-primary30 font-bold hover:text-primary20 capitalize cool" href="contact.html">contact</a>
+            </div>
+          </div>
+          <!-- hamburger menu -->
+          <div class="hamburger-menu flex flex-col gap-2 cursor-pointer md:hidden" onclick="showsidebar()" id="showlinks">
+            <span class="sp"></span>
+          </div>
+        </div>    
+      </nav>
+</body>
+</html>
