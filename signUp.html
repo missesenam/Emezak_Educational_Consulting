@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Authentication</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex justify-center items-center h-screen bg-gray-100 font-[Poppins]">
+
+    <section class="border border-gray-300 p-8 w-full max-w-lg bg-white shadow-lg rounded-xl">
+        <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Sign Up</h1>
+        <form action="" id="signup-form" class="space-y-6">
+            <!-- username -->
+            <div>
+                <label for="username-input" class="block text-lg text-gray-600 mb-2">Username</label>
+                <input type="text" name="username" id="username-input" required class="w-full px-4 py-3 border border-gray-300 rounded-lg text-base">
+            </div>
+            <!-- email -->
+            <div>
+                <label for="email-input" class="block text-lg text-gray-600 mb-2">Email</label>
+                <input type="email" name="email" id="email-input" required class="w-full px-4 py-3 border border-gray-300 rounded-lg text-base">
+            </div>
+            <!-- password -->
+            <div>
+                <label for="password-input" class="block text-lg text-gray-600 mb-2">Password</label>
+                <div class="relative">
+                    <input type="password" name="password" id="password-input" required class="w-full px-4 py-3 border border-gray-300 rounded-lg text-base pr-10">
+                    <span class="absolute inset-y-0 right-4 flex items-center cursor-pointer toggle-password" data-target="password-input">
+                        <!-- Eye icon SVG (closed) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" fill="#5f6368" viewBox="0 -960 960 960">
+                            <path d="m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5 52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17 84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20 246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53 53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101 143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75 0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z"/>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <!-- repeat password -->
+            <div>
+                <label for="repeat-password-input" class="block text-lg text-gray-600 mb-2">Repeat Password</label>
+                <div class="relative">
+                    <input type="password" name="repeat-password" id="repeat-password-input" required class="w-full px-4 py-3 border border-gray-300 rounded-lg text-base pr-10">
+                    <span class="absolute inset-y-0 right-4 flex items-center cursor-pointer toggle-password" data-target="repeat-password-input">
+                        <!-- Eye icon SVG (closed) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" fill="#5f6368" viewBox="0 -960 960 960">
+                            <path d="m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5 52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17 84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20 246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53 53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101 143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75 0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z"/>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <!-- sign up button -->
+            <button type="submit" class="w-full py-3 rounded-full bg-blue-500 text-white text-lg font-semibold hover:bg-blue-700">Sign Up</button>
+        </form>
+        <p class="text-center text-gray-600 mt-6">Already have an account? <a href="login.html" class="text-blue-500 hover:underline">Login</a> here</p>    
+    </section>
+
+<section class="flex items-center justify-center h-screen bg-gray-100">
+  <div class="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
+    <h2 class="text-2xl font-bold text-center mb-6">Create an Account</h2>
+    
+    <form class="space-y-4">
+      <!-- Full Name Input -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Full Name</label>
+        <input type="text" placeholder="John Doe" class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+      
+      <!-- Email Input -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Email</label>
+        <input type="email" placeholder="you@example.com" class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+      
+      <!-- Password Input -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Password</label>
+        <input type="password" placeholder="••••••••" class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+      
+      <!-- Sign Up Button -->
+      <div>
+        <button type="submit" class="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          Sign Up
+        </button>
+      </div>
+    </form>
+    
+    <p class="text-center text-sm text-gray-600 mt-6">
+      Already have an account? <a href="#" class="text-blue-500 hover:underline">Log In</a>
+    </p>
+  </div>
+</section>
+
+    
+</body>
+</html>

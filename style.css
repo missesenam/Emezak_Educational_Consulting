@@ -2,14 +2,14 @@
             margin: 0;
             box-sizing: border-box;
         }   
-     /*side bar menu style */
+     /*side bar menu style #4495a2*/
       .hamburger-menu::before,
         .hamburger-menu::after,
         .hamburger-menu span{
             content: '';
             width: 45px;
             height: 6px;
-            background: var(--hamburger-color, rgb(34, 33, 33));
+            background: var(--hamburger-color, #4495a2);
             border-radius: 100px;
         }
         .close-menu{

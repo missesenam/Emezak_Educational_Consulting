@@ -16,11 +16,11 @@
         <div class="close-menu flex flex-col gap-2 ml-auto pointer md:hidden cursor-pointer" onclick="hidesidebar()">
         </div>
         <div class="flex flex-col items-center gap-5 md:gap-10 md:flex-row md:flex-row">
-          <a class="text-primary30 font-bold hover:text-primary20 capitalize cool" href="index.html">Home</a>
-          <a class="text-primary30 font-bold hover:text-primary20 capitalize cool" href="About.html">About</a>
-          <a class="text-primary30 font-bold hover:text-primary20 capitalize cool" href="services.html">services</a>
-          <a class="text-primary30 font-bold hover:text-primary20 capitalize cool" href="package.html">package</a>
-          <a class="text-primary30 font-bold hover:text-primary20 capitalize cool" href="contact.html">contact</a>
+          <a class="text-wht md:text-primary30 font-bold hover:text-primary20 capitalize cool" href="index.html">Home</a>
+          <a class="text-wht md:text-primary30 font-bold hover:text-primary20 capitalize cool" href="About.html">About</a>
+          <a class="text-wht md:text-primary30 font-bold hover:text-primary20 capitalize cool" href="services.html">services</a>
+          <a class="text-wht md:text-primary30 font-bold hover:text-primary20 capitalize cool" href="package.html">package</a>
+          <a class="text-wht md:text-primary30 font-bold hover:text-primary20 capitalize cool" href="contact.html">contact</a>
         </div>
       </div>
       <!-- hamburger menu -->
@@ -42,19 +42,21 @@
       navBar.classList.add('bg-primary10'); 
       navBar.classList.remove('md:bg-transparent');
       hamburgerMenu.style.setProperty('--hamburger-color', 'white');
+      // link text color
       Array.from(linkColors).forEach(link =>{
-        link.classList.add('text-wht')
-        link.classList.remove('text-primary30')
+        link.classList.add('md:text-wht')
+        link.classList.remove('md:text-primary30')
       })
       // nav image
       navIcon.src='./icon/emezak_logo.png'
     } else {
       navBar.classList.remove('bg-primary10'); 
       navBar.classList.add('md:bg-transparent');  
-      hamburgerMenu.style.setProperty('--hamburger-color', 'rgb(34, 33, 33)');
+      hamburgerMenu.style.setProperty('--hamburger-color', '#4495a2');
+      // link text color
       Array.from(linkColors).forEach(link =>{
-      link.classList.add('text-primary30')
-      link.classList.remove('text-wht')
+      link.classList.add('md:text-primary30')
+      link.classList.remove('md:text-wht')
       })
       // nav image
       navIcon.src='./icon/emezak_logo1.png'
@@ -73,6 +75,32 @@
       menuBar.classList.add('hidden');
       hamburgerbar.classList.remove('hidden');
   } 
+
+
+// carousel
+
+
+document.addEventListener("DOMContentLoaded", function() {
+
+  let currentSlide = 0;
+  const slideInterval = 3000; // 3 seconds
+  
+  function autoSlide() {
+    const slides = document.querySelector('.slides');
+    const totalSlides = slides.children.length;
+  
+    currentSlide = (currentSlide + 1) % totalSlides;
+    slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
+  
+  setInterval(autoSlide, slideInterval);
+  })
+  
+
+
+
+
+
 
   document.addEventListener("DOMContentLoaded", function() {
   // typewriter effect
@@ -168,7 +196,7 @@
               title: "Financial Aid and Scholarship Guidance",
               duration: "1 month",
               itemlist: [
-                  "Help with completing financial aid applications (FAFSA, CSS Profile).",
+                  "Help with completing financial aid applications.",
                   "Identification of scholarships and grants based on academic and personal profile.",
                   "Assistance with drafting scholarship application essays."
               ]
@@ -244,7 +272,7 @@
       
       // max-w-md <div class="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-md"></div> bg-[url('${package.img}')]
     let packagecard = `<div class="relative bg-cover bg-center  py-10 my-[50px]">
-      <div class="lg:w-[50%] mx-auto bg-white rounded-lg shadow-xl p-6 relative transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] transform hover:scale-110">
+      <div class="lg:w-[50%] mx-auto bg-white rounded-lg shadow-xl p-6 relative md:transition-transform md:duration-500 md:ease-[cubic-bezier(0.25, 1, 0.5, 1)] md:transform md:hover:scale-110">
         <div class="border-b-4 border-primary20 bg-gradient-to-r from-primary10 to-primary20 p-6 text-center mb-4 rounded-t-lg">
           <h1 class="text-2xl font-extrabold text-white mb-2">${package.title}</h1>
           <p class="text-white text-lg">${package.description}</p>
@@ -267,7 +295,7 @@
     {
       title: "Application Strategy and Planning",
       svg: '<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-80 360-642l-88 402H80v-80h128l113-520h79l122 572 78-332h80l72 280h128v80H690l-48-188-82 348h-80Z"/></svg>',
-      img: "./img/plan.jpg",
+      img: "./img/test.png",
       paragraph: "This service provides a comprehensive plan tailored to each student, helping them navigate the application process effectively.",
       list: [
         "College/University Selection",
@@ -277,7 +305,7 @@
     {
       title: "Visa Application",
       svg: '<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M280-80v-100l120-84v-144L80-280v-120l320-224v-176q0-33 23.5-56.5T480-880q33 0 56.5 23.5T560-800v176l320 224v120L560-408v144l120 84v100l-200-60-200 60Z"/></svg>',
-      img: "./img/visa.jpg",
+      img: "./img/visa.png",
       paragraph: "Assistance with the visa application process to ensure smooth documentation and interview preparation.",
       list: [
         "Visa application completion.",
@@ -295,7 +323,7 @@
     {
       title: "Seminar/Workshops & Conferences",
       svg: '<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M500-780q0 33-23.5 56.5T420-700q-13 0-24-3.5T374-715q-24 8-38.5 29T321-640h519l-40 280H604v-80h127q5-30 8.5-60t8.5-60H212q5 30 8.5 60t8.5 60h127v80H160l-40-280h120q0-49 27-89t73-59q3-31 26-51.5t54-20.5q33 0 56.5 23.5T500-780ZM391-200h178l23-240H368l23 240Zm-71 80-30-312q-4-35 20-61.5t59-26.5h222q35 0 59 26.5t20 61.5l-30 312H320Z"/></svg>',
-      img: "./img/workshop.jpg",
+      img: "./img/conf.png",
       paragraph: "Participate in engaging seminars and workshops led by industry experts to expand your knowledge and skills.",
       list: [
         "Have invited guest speakers on pertinent international studies topics.",
@@ -316,7 +344,7 @@
 
     let servicecard = `<div class="relative group">
     <div class="cursor-pointer flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg hover:shadow-lg transition-shadow duration-300">
-      <div class="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
+      <div class="h-56 m-2.5 overflow-hidden text-white rounded-md">
         <img src="${service.img}" alt="${service.title}" class="w-full h-full" />
       </div>
       <div class="p-4">
@@ -351,16 +379,17 @@ document.addEventListener("DOMContentLoaded", function() {
     {
       name: "Nana Sarpanyin",
       description: "Founder / Head of Consulting",
-      moredescription: "Dr. Oliver Komi Mawunyo Aziator Founder & Head of Operations, Emezak Educational Consulting Trusted Education Abroad Expert | Visionary Leader | Student Success Strategist",
-      img: "./img/drOliver.jpg",
+      moredescription: "Co-Founder & Head of consulting, Emezak Educational Consulting 5+ Years as residential student living director at bradley university.",
+      img: "./img/Mr.Nana.png",
       id: "2"
     }
   ]
+  //    relative flex flex-col 
   theTeam.forEach(person =>{
-    let personBox = `<div class="transition-transform duration-500 ease-out transform hover:scale-105">
-                  <div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg">
+    let personBox = `
+                  <div class="my-6 bg-white shadow-sm border border-slate-200 rounded-lg  transition-transform duration-500 ease-out transform hover:scale-105">
                     <!-- image -->
-                    <div class="relative h-96 m-2.5 overflow-hidden text-white rounded-md object-bottom">
+                    <div class="h-96 m-2.5 overflow-hidden text-white rounded-md object-bottom">
                       <img src="${person.img}" alt="card-image" class="w-full h-full object-cover"/>
                     </div>
                     <!-- text -->
@@ -381,7 +410,7 @@ document.addEventListener("DOMContentLoaded", function() {
                       </a>
                     </div>
                   </div> 
-            </div>`
+            `
             teamBox.innerHTML += personBox
   })
 });
@@ -412,7 +441,30 @@ document.addEventListener("DOMContentLoaded", function() {
                           email: "Aziatoro@emezak.com",
                           callToAction1: "Unlock Your Global Education Potential",
                           callToAction2: "Connect with Dr. Aziator for personalized guidance and support:"
-                      }
+                      },
+                      img: "./img/drOliver.jpg"
+                      },
+                      {
+                        name: "Mr. Sarpanyin",
+                      title: "Founder / Head of Consulting",
+                      organization: "Emezak Educational Consulting",
+                      expertise: [
+                          "broad technical skills",
+                          "significant leadership experience in empowering youth",
+                      ],
+                      about: "Mr. Sarpanyin brings a powerful blend of technical expertise and extensive leadership experience in youth development to Emezak Educational Consulting. Holding both a Bachelor’s and Master’s degree from Bradley University in the United States, Nana is driven by a deep commitment to helping young people realize their study abroad aspirations. His passion for supporting youth in their educational journeys inspired him to co-found Emezak Educational Consulting, where he strives to make overseas education accessible and achievable for Ghanaian students.",
+                      professionalHighlights: [
+                          "Co-Founder & Head of consulting, Emezak Educational Consulting",
+                          "5+ Years as residential student living director at bradley university.",
+                          "+13 Year  Corporate america experience as a Life Cycle manager.",
+                          "15+ experience in entrepreneurship and leadership",
+                      ],
+                      contact: {
+                          email: "nsarpany@emezak.com",
+                          callToAction1: "Unlock Your Global Education Potential",
+                          callToAction2: "Connect with Mr. Sarpanyin for personalized guidance and support:"
+                      },
+                      img: "./img/Mr.Nana.png"
                       },
                     ];
                   
@@ -426,20 +478,20 @@ const teamMemberHTML = `
         <div class="flex flex-col md:flex-row items-center bg-white shadow-sm border border-slate-200 rounded-lg overflow-hidden">
             <div class="relative p-4 md:w-1/3 w-full">
                 <img
-                    src="./img/drOliver.jpg"
+                    src="${teamMember.img}"
                     alt="${teamMember.name}"
                     class="h-full w-full rounded-md object-cover transition-transform duration-500 ease-in-out transform hover:scale-105"
                 />
             </div>
             <div class="p-6 text-center md:text-left md:w-3/5">
                 <h2 class="text-slate-800 text-2xl font-semibold mb-2">${teamMember.title}, ${teamMember.organization}</h2>
-                <p class="text-slate-600 leading-relaxed font-light mb-4">
+                <p class="text-slate-600 leading-relaxed font-light mb-4 capitalize">
                     ${teamMember.expertise.join(' | ')}
                 </p>
             </div>
         </div>
         <div class="mt-6">
-            <h3 class="text-2xl font-semibold text-primary10 mb-2">About Dr. Aziator</h3>
+            <h3 class="text-2xl font-semibold text-primary10 mb-2">About ${teamMember.name}</h3>
             <p class="text-slate-600 leading-relaxed">
                 ${teamMember.about}
             </p>
@@ -459,7 +511,7 @@ const teamMemberHTML = `
         </div>
     </div>
 `;
-teamMembers.innerHTML = teamMemberHTML;
+teamMembers.innerHTML += teamMemberHTML;
 })
 });
 
@@ -525,3 +577,11 @@ teamMembers.innerHTML = teamMemberHTML;
 
 
   // });
+
+  function updateFields() {
+    document.querySelectorAll('.field-group').forEach(group => group.classList.add('hidden'));
+    const selectedLevel = document.getElementById('educationLevel').value;
+    if (selectedLevel) {
+        document.getElementById(selectedLevel + 'Fields').classList.remove('hidden');
+    }
+}
