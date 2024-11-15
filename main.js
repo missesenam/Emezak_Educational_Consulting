@@ -32,6 +32,21 @@
   `;
   navBar.innerHTML = navigation;
 
+  // number
+document.addEventListener("DOMContentLoaded", function() {
+
+  const selectElement = document.getElementById('countryandcode');
+    const countryCodeSpan = document.getElementById('country-code');
+
+    function updateCountryCode() {
+        const selectedValue = selectElement.value;
+        countryCodeSpan.textContent = selectedValue; 
+    }
+    updateCountryCode();
+    selectElement.addEventListener('change', updateCountryCode);
+
+    })
+
   // navbar color on scroll
 
   const linkColors = document.querySelectorAll('.cool')
@@ -78,8 +93,6 @@
 
 
 // carousel
-
-
 document.addEventListener("DOMContentLoaded", function() {
 
   let currentSlide = 0;
@@ -96,10 +109,6 @@ document.addEventListener("DOMContentLoaded", function() {
   setInterval(autoSlide, slideInterval);
   })
   
-
-
-
-
 
 
   document.addEventListener("DOMContentLoaded", function() {
@@ -585,3 +594,6 @@ teamMembers.innerHTML += teamMemberHTML;
         document.getElementById(selectedLevel + 'Fields').classList.remove('hidden');
     }
 }
+
+
+

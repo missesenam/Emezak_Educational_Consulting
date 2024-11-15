@@ -52,15 +52,27 @@
             </div>
             <!-- phone nnumber Phone not done-->
             <div>
-                <label for="last-name" class="required mb-1 block font-medium text-slate-700">Number/Numéro de téléphone</label>
-                <div class="flex border border-[#afb0a9] rounded-md overflow-hidden">
-                    <select class="bg-gray-100 text-gray-700 p-2 text-sm border-r border-[#afb0a9] outline-none">
-                        <option value="us">United States</option>
-                        <option value="ca">Canada</option>
-                        <option value="gb">United Kingdom</option>
-                    </select>
-                    <input type="text" class="w-16 bg-gray-100 text-gray-700 text-center p-2 text-sm border-r border-[#afb0a9] outline-none" value="+1" readonly>
-                    <input type="tel" class="flex-1 p-3 text-sm outline-none">
+                <label for="countryandcode" class="required mb-1 block font-medium text-slate-700">Phone number/Numéro de téléphone</label>
+                <select id="countryandcode" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <option value="+233">Ghana (+233)</option>
+                    <option value="+246">British Indian Ocean Territory (+246)</option>
+                    <option value="+1284">British Virgin Islands (+1284)</option>
+                    <option value="+673">Brunei (+673)</option>
+                    <option value="+359">Bulgaria (+359)</option>
+                    <option value="+226">Burkina Faso (+226)</option>
+                    <option value="+257">Burundi (+257)</option>
+                    <option value="+855">Cambodia (+855)</option>
+                    <option value="+237">Cameroon (+237)</option>
+                    <option value="+1">Canada (+1)</option>
+                    <option value="+238">Cape Verde (+238)</option>
+                    <option value="+599">Caribbean Netherlands (+599)</option>
+                    <option value="+1345">Cayman Islands (+1345)</option>
+                    <option value="+236">Central African Republic (+236)</option>
+                    <option value="+235">Chad (+235)</option>
+                </select>
+                <div class="mt-1 flex rounded-md shadow-sm">
+                    <span id="country-code" class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm"></span>
+                    <input type="text" id="phone" class="flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300" placeholder="Enter your phone number">
                 </div>
             </div>
             <!-- Date of birth -->
