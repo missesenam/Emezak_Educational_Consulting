@@ -32,6 +32,105 @@
   `;
   navBar.innerHTML = navigation;
 
+
+
+document.addEventListener("DOMContentLoaded", function() {
+
+
+  const currentMonthElement = document.getElementById('currentMonth');
+const calendarDatesElement = document.getElementById('calendarDates');
+const prevMonthButton = document.getElementById('prevMonth');
+const nextMonthButton = document.getElementById('nextMonth');
+
+let currentDate = new Date();
+
+// Events data
+const events = {
+  "2024-11-07": 2, // Two events on November 7, 2024
+  "2024-11-14": 1, // One event on November 14, 2024
+  "2024-11-24": 3, // Three events on November 24, 2024
+};
+
+function renderCalendar(date) {
+  const year = date.getFullYear();
+  const month = date.getMonth();
+
+  // Update the displayed month and year
+  const monthNames = [
+    'January', 'February', 'March', 'April', 'May', 'June', 
+    'July', 'August', 'September', 'October', 'November', 'December'
+  ];
+  currentMonthElement.textContent = `${monthNames[month]} ${year}`;
+
+  // Clear existing dates
+  calendarDatesElement.innerHTML = '';
+
+  // Get the first day of the month and total days in the month
+  const firstDayOfMonth = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+  // Add empty cells for days of the previous month
+  for (let i = 0; i < firstDayOfMonth; i++) {
+    const emptyCell = document.createElement('div');
+    calendarDatesElement.appendChild(emptyCell);
+  }
+
+  // Populate days of the current month
+  const today = new Date();
+  for (let day = 1; day <= daysInMonth; day++) {
+    const dateElement = document.createElement('div');
+    dateElement.className = `
+      p-4 bg-gray-100 text-gray-800 rounded-lg hover:bg-purple-100
+      transition relative
+    `;
+
+    // Highlight today's date
+    if (
+      day === today.getDate() &&
+      month === today.getMonth() &&
+      year === today.getFullYear()
+    ) {
+      dateElement.classList.add('bg-purple-600', 'text-white', 'font-bold');
+    }
+
+    // Display the day
+    dateElement.textContent = day;
+
+    // Add event dots
+    const dateKey = `${year}-${String(month + 1).padStart(2, '0')}-${String(
+      day
+    ).padStart(2, '0')}`;
+    if (events[dateKey]) {
+      const eventDotsContainer = document.createElement('div');
+      eventDotsContainer.className = 'event-dots';
+      for (let i = 0; i < events[dateKey]; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'dot';
+        eventDotsContainer.appendChild(dot);
+      }
+      dateElement.appendChild(eventDotsContainer);
+    }
+
+    calendarDatesElement.appendChild(dateElement);
+  }
+}
+
+// Event listeners for navigation
+prevMonthButton.addEventListener('click', () => {
+  currentDate.setMonth(currentDate.getMonth() - 1);
+  renderCalendar(currentDate);
+});
+
+nextMonthButton.addEventListener('click', () => {
+  currentDate.setMonth(currentDate.getMonth() + 1);
+  renderCalendar(currentDate);
+});
+
+// Initial render
+renderCalendar(currentDate);
+})
+
+
   // number
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -528,7 +627,7 @@ teamMembers.innerHTML += teamMemberHTML;
   let currentStep = 1;
 
   function nextStep() {
-    if (currentStep < 3) {
+    if (currentStep < 2) {
       document.getElementById(`step${currentStep}`).classList.add('hidden');
       currentStep++;
       document.getElementById(`step${currentStep}`).classList.remove('hidden');
@@ -546,7 +645,7 @@ teamMembers.innerHTML += teamMemberHTML;
   }
 
   function updateProgressIcons() {
-    for (let i = 1; i <= 3; i++) {
+    for (let i = 1; i <= 2; i++) {
       const icon = document.getElementById(`step${i}-icon`);
       icon.classList.remove('text-blue-500');
       icon.classList.add(i <= currentStep ? 'text-blue-500' : 'text-gray-400');
